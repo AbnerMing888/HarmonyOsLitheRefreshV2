@@ -5,7 +5,7 @@ import {
   LoadMoreLayoutStatusModel,
   RefreshController,
   RefreshLayoutStatusModel
-} from '@abner/lithe_refresh_v2'
+} from '@abner/lithe_refresh'
 
 /**
  * AUTHOR:AbnerMing

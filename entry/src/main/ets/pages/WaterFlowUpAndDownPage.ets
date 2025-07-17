@@ -1,4 +1,4 @@
-import { LitheRefresh, RefreshController } from '@abner/lithe_refresh_v2'
+import { LitheRefresh, RefreshController } from '@abner/lithe_refresh'
 import { ActionBar } from '@abner/bar'
 import router from '@ohos.router'
 
@@ -83,6 +83,7 @@ struct WaterFlowView {
   aboutToAppear() {
     this.setItemSizeArray()
   }
+
 
   build() {
     WaterFlow({ scroller: this.scroller }) {

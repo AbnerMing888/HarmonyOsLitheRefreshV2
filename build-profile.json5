@@ -1,19 +1,7 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\GW00261583\\.ohos\\config\\default_HarmonyOsLitheRefreshV2_mZT-P8tB5hY0LxQz5N39hxjnNyEoOJXUNVIQBJYQQmY=.cer",
-          "storePassword": "0000001B3CEDB87BF68DDCBF2B835C0E633C4991F01FAB0021D2DD6323CBD3D96C9260B1B0AF616C8C8FA9",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B96A77E56D18E4AD71202472ADFB2001E5FB5FD5C8B3DA5E02EA6A20E01323A50943D2ED979DAB5",
-          "profile": "C:\\Users\\GW00261583\\.ohos\\config\\default_HarmonyOsLitheRefreshV2_mZT-P8tB5hY0LxQz5N39hxjnNyEoOJXUNVIQBJYQQmY=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\GW00261583\\.ohos\\config\\default_HarmonyOsLitheRefreshV2_mZT-P8tB5hY0LxQz5N39hxjnNyEoOJXUNVIQBJYQQmY=.p12"
-        }
-      }
+
     ],
     "products": [
       {
@@ -30,7 +18,7 @@
     ],
     "buildModeSet": [
       {
-        "name": "debug",
+        "name": "debug"
       },
       {
         "name": "release"

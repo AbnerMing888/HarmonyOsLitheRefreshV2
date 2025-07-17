@@ -16,6 +16,7 @@
     "pages/RefreshScrollPage",
     "pages/LazyDataOperationPage",
     "pages/MaxScrollSpringPage",
-    "pages/RefreshImmersivePage"
+    "pages/RefreshImmersivePage",
+    "pages/WebViewPage"
   ]
 }

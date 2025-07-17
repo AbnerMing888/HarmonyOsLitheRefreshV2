@@ -1,5 +1,10 @@
 ## 介绍
 
+<p align="center">
+<img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/abner.jpg" width="100px" /><br/>
+<span style="font-size:12px;color:red;">扫码关注，千帆起航，共筑鸿蒙！</span>
+</p>
+
 lithe_refresh_v2一款V2装饰器刷新组件,并且是一个轻盈的上拉下拉刷新组件，无任何耦合，支持List、Grid，WaterFlow，支持各种任意组件刷新!
 
 ### 使用须知
@@ -17,7 +22,7 @@ lithe_refresh_v2一款V2装饰器刷新组件,并且是一个轻盈的上拉下�
 ### 所有功能
 
 <p align="center">
-<img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/refresh/lithe.png" width="300px" />
+<img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/refresh/lithe715.png" width="300px" />
 </p>
 
 ### 刷新效果
@@ -30,9 +35,9 @@ lithe_refresh_v2一款V2装饰器刷新组件,并且是一个轻盈的上拉下�
 
 ## 开发环境
 
-DevEco Studio NEXT Developer Beta1,Build Version: 5.0.7.200
+DevEco Studio NEXT Developer Beta1,Build Version: 5.0.11.100
 
-Api版本：**12**
+Api版本：**>=12**
 
 modelVersion：5.0.0
 
@@ -49,7 +54,7 @@ ohpm install @abner/lithe_refresh_v2
 方式二：在工程的oh-package.json5中设置三方包依赖，配置示例如下：
 
 ```
-"dependencies": { "@abner/lithe_refresh_v2": "^1.0.0"}
+"dependencies": { "@abner/lithe_refresh_v2": "^1.0.1"}
 ```
 
 <p align="center"><img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/refresh/lithe_001.png" width="300"></p>
@@ -76,7 +81,7 @@ controller: RefreshController = new RefreshController()
 @Builder
 itemLayout() {
   Column() {
-   
+
   }.width("100%")
     .height("100%")
     .backgroundColor(Color.Pink)
@@ -84,17 +89,17 @@ itemLayout() {
 }
 
 LitheRefresh({
-        itemLayout: this.itemLayout,
-        controller: this.controller,
-        onRefresh: () => {
-          //下拉刷新
-          this.controller.finishRefresh()
-        },
-        onLoadMore: () => {
-          //加载更多
-          this.controller.finishLoadMore()
-        }
-      })
+  itemLayout: this.itemLayout,
+  controller: this.controller,
+  onRefresh: () => {
+    //下拉刷新
+    this.controller.finishRefresh()
+  },
+  onLoadMore: () => {
+    //加载更多
+    this.controller.finishLoadMore()
+  }
+})
 ```
 
 ### List使用
@@ -123,19 +128,19 @@ struct ListUpAndDownPage {
       }, (item: string, index: number) => JSON.stringify(item) + "_" + index)
     }
     .scrollBar(BarState.Off)
-    .edgeEffect(EdgeEffect.None)
-    .width("100%")
-    .height("100%")
-    .padding({ left: 20, right: 20 })
-    .nestedScroll({
-      scrollForward: NestedScrollMode.PARENT_FIRST,
-      scrollBackward: NestedScrollMode.PARENT_FIRST
-    })
+      .edgeEffect(EdgeEffect.None)
+      .width("100%")
+      .height("100%")
+      .padding({ left: 20, right: 20 })
+      .nestedScroll({
+        scrollForward: NestedScrollMode.PARENT_FIRST,
+        scrollBackward: NestedScrollMode.PARENT_FIRST
+      })
   }
 
   build() {
     Column() {
-      
+
       LitheRefresh({
         scroller: this.scroller,
         controller: this.controller,
@@ -188,17 +193,17 @@ struct GridUpAndDownPage {
       }, (item: string, index: number) => JSON.stringify(item) + "_" + index)
     }
     .columnsTemplate("1fr 1fr")
-    .columnsGap(10)
-    .rowsGap(10)
-    .scrollBar(BarState.Off)
-    .edgeEffect(EdgeEffect.None)
-    .width("100%")
-    .height("100%")
-    .padding({ left: 20, right: 20 })
-    .nestedScroll({
-      scrollForward: NestedScrollMode.PARENT_FIRST,
-      scrollBackward: NestedScrollMode.PARENT_FIRST
-    })
+      .columnsGap(10)
+      .rowsGap(10)
+      .scrollBar(BarState.Off)
+      .edgeEffect(EdgeEffect.None)
+      .width("100%")
+      .height("100%")
+      .padding({ left: 20, right: 20 })
+      .nestedScroll({
+        scrollForward: NestedScrollMode.PARENT_FIRST,
+        scrollBackward: NestedScrollMode.PARENT_FIRST
+      })
   }
 
   build() {
@@ -324,20 +329,20 @@ struct WaterFlowView {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[item % 30])
-        .backgroundColor(this.colors[item % 5])
+          .height(this.itemHeightArray[item % 30])
+          .backgroundColor(this.colors[item % 5])
       }, (item: string) => item)
     }
     .columnsTemplate("1fr 1fr")
-    .columnsGap(10)
-    .rowsGap(5)
-    .backgroundColor(0xFAEEE0)
-    .width('100%')
-    .height('100%')
-    .nestedScroll({
-      scrollForward: NestedScrollMode.PARENT_FIRST,
-      scrollBackward: NestedScrollMode.PARENT_FIRST
-    })
+      .columnsGap(10)
+      .rowsGap(5)
+      .backgroundColor(0xFAEEE0)
+      .width('100%')
+      .height('100%')
+      .nestedScroll({
+        scrollForward: NestedScrollMode.PARENT_FIRST,
+        scrollBackward: NestedScrollMode.PARENT_FIRST
+      })
   }
 }
 
