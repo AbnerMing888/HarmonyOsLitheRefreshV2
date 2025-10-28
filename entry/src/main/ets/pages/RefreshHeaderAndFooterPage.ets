@@ -5,7 +5,7 @@ import {
   LoadMoreLayoutStatusModel,
   RefreshController,
   RefreshLayoutStatusModel
-} from '@abner/lithe_refresh'
+} from '@abner/lithe_refresh_v2'
 
 /**
  * AUTHOR:AbnerMing
@@ -21,9 +21,9 @@ struct RefreshHeaderAndFooterPage {
   controller: RefreshController = new RefreshController()
 
   @Builder
-  itemLayout(_this: RefreshHeaderAndFooterPage) {
-    List({ scroller: _this.scroller, space: 20 }) {
-      ForEach(_this.testArray, (item: number) => {
+  itemLayout() {
+    List({ scroller: this.scroller, space: 20 }) {
+      ForEach(this.testArray, (item: number) => {
         ListItem() {
           Text('' + item)
             .width('100%')
@@ -87,10 +87,13 @@ struct RefreshHeaderAndFooterPage {
       LitheRefresh({
         scroller: this.scroller,
         controller: this.controller,
+        refreshHeaderAttribute: (attr) => {
+          attr.height = 80 //刷新头的高度
+        },
         headerRefreshLayout: this.headerRefreshLayout,
         footerLoadLayout: this.footerLoadLayout,
         itemLayout: () => {
-          this.itemLayout(this)
+          this.itemLayout()
         },
         onRefresh: () => {
           //下拉刷新

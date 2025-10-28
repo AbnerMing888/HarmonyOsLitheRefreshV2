@@ -1,4 +1,4 @@
-import { LitheRefresh, RefreshController, RefreshHeaderType } from '@abner/lithe_refresh'
+import { LitheRefresh, RefreshController, RefreshHeaderType } from '@abner/lithe_refresh_v2'
 import { ActionBar } from '@abner/bar'
 import router from '@ohos.router'
 
@@ -15,9 +15,9 @@ struct RefreshPointPage {
   controller: RefreshController = new RefreshController()
 
   @Builder
-  itemLayout(_this: RefreshPointPage) {
-    List({ scroller: _this.scroller, space: 20 }) {
-      ForEach(_this.testArray, (item: number) => {
+  itemLayout() {
+    List({ scroller: this.scroller, space: 20 }) {
+      ForEach(this.testArray, (item: number) => {
         ListItem() {
           Text('' + item)
             .width('100%')
@@ -58,7 +58,7 @@ struct RefreshPointPage {
           header.headerType = RefreshHeaderType.POINTS //三个小圆点
         },
         itemLayout: () => {
-          this.itemLayout(this)
+          this.itemLayout()
         },
         onRefresh: () => {
           //下拉刷新

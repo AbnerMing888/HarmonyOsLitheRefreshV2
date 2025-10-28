@@ -1,6 +1,6 @@
 import webview from '@ohos.web.webview';
 import { ActionBar } from '@abner/bar'
-import { LitheRefresh, RefreshController } from '@abner/lithe_refresh';
+import { LitheRefresh, RefreshController } from '@abner/lithe_refresh_v2';
 
 /**
  * AUTHOR:AbnerMing

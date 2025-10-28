@@ -4,9 +4,8 @@ import router from '@ohos.router'
 /**
  * AUTHOR:AbnerMing
  * DATE:2024/11/13
- * INTRODUCE:首页
+ * INTRODUCE:旧组件LitheRefresh（依然正常维护中）
  * */
-
 
 @Entry
 @ComponentV2
@@ -14,20 +13,24 @@ struct Index {
   private mGridData: string[] = ["任意组件刷新", "List组件刷新", "Grid组件刷新",
     "WaterFlow组件刷新", "自定义刷新头尾", "自动下拉刷新",
     "无阻尼效果", "最大阻尼", "加载数据不回弹", "显示暂无数据", "固定暂无数据", "刷新不禁止拖动", "三个点刷新头",
-    "懒加载封装使用", "沉浸式", "Web组件"]
+    "懒加载封装使用", "沉浸式", "Web组件", "自适应高度", "多视图", "自动加载数据"]
   private mRouterData: string[] = [
     "pages/RefreshUpAndDownPage", "pages/ListUpAndDownPage", "pages/GridUpAndDownPage",
     "pages/WaterFlowUpAndDownPage", "pages/RefreshHeaderAndFooterPage",
     "pages/AutoRefreshPage", "pages/NoScrollSpringPage", "pages/MaxScrollSpringPage", "pages/LoadDataSpringBackPage",
     "pages/FooterNothingPage", "pages/FixedFooterPage", "pages/RefreshScrollPage",
     "pages/RefreshPointPage", "pages/LazyDataOperationPage", "pages/RefreshImmersivePage"
-    , "pages/WebViewPage"
+    , "pages/WebViewPage", "pages/AdaptiveHeightPage", "pages/MultiViewPage", "pages/AutoListUpAndDownPage"
   ]
 
   build() {
     Column() {
       ActionBar({
-        title: "轻盈刷新库功能"
+        title: "轻盈刷新库",
+        rightText: "系统Refresh",
+        onRightClick: () => {
+          router.pushUrl({ url: "pages/RefreshIndex" })
+        }
       })
       Grid() {
         ForEach(this.mGridData, (item: string, index: number) => {

@@ -1,4 +1,4 @@
-import { LitheRefresh, RefreshController } from '@abner/lithe_refresh'
+import { LitheRefresh, RefreshController } from '@abner/lithe_refresh_v2'
 import { ActionBar } from '@abner/bar'
 import router from '@ohos.router'
 
@@ -14,9 +14,9 @@ struct WaterFlowUpAndDownPage {
   controller: RefreshController = new RefreshController()
 
   @Builder
-  itemLayout(_this: WaterFlowUpAndDownPage) {
+  itemLayout() {
     WaterFlowView({
-      scroller: _this.scroller
+      scroller: this.scroller
     })
   }
 
@@ -35,7 +35,7 @@ struct WaterFlowUpAndDownPage {
         scroller: this.scroller,
         controller: this.controller,
         itemLayout: () => {
-          this.itemLayout(this)
+          this.itemLayout()
         },
         onRefresh: () => {
           //下拉刷新

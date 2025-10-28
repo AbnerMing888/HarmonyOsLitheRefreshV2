@@ -1,4 +1,4 @@
-import { LitheRefresh, RefreshController } from '@abner/lithe_refresh'
+import { LitheRefresh, RefreshController } from '@abner/lithe_refresh_v2'
 import { ActionBar } from '@abner/bar'
 import router from '@ohos.router'
 
@@ -15,9 +15,9 @@ struct RefreshScrollPage {
   controller: RefreshController = new RefreshController()
 
   @Builder
-  itemLayout(_this: RefreshScrollPage) {
-    List({ scroller: _this.scroller, space: 20 }) {
-      ForEach(_this.testArray, (item: number) => {
+  itemLayout() {
+    List({ scroller: this.scroller, space: 20 }) {
+      ForEach(this.testArray, (item: number) => {
         ListItem() {
           Text('' + item)
             .width('100%')
@@ -57,7 +57,7 @@ struct RefreshScrollPage {
         isPullUpProhibitTouch: false,
         isPullDownProhibitTouch: false,
         itemLayout: () => {
-          this.itemLayout(this)
+          this.itemLayout()
         },
         onRefresh: () => {
           //下拉刷新

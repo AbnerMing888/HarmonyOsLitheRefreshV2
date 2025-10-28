@@ -1,4 +1,4 @@
-import { LitheRefresh, RefreshController } from '@abner/lithe_refresh'
+import { LitheRefresh, RefreshController } from '@abner/lithe_refresh_v2'
 import { ActionBar } from '@abner/bar'
 import router from '@ohos.router'
 
@@ -9,15 +9,15 @@ import router from '@ohos.router'
  * */
 @Entry
 @ComponentV2
-struct ListUpAndDownPage {
+struct FixedFooterPage {
   @Local testArray: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   scroller: Scroller = new Scroller()
   controller: RefreshController = new RefreshController()
 
   @Builder
-  itemLayout(_this: ListUpAndDownPage) {
-    List({ scroller: _this.scroller, space: 20 }) {
-      ForEach(_this.testArray, (item: number) => {
+  itemLayout() {
+    List({ scroller: this.scroller, space: 20 }) {
+      ForEach(this.testArray, (item: number) => {
         ListItem() {
           Text('' + item)
             .width('100%')
@@ -55,7 +55,7 @@ struct ListUpAndDownPage {
         scroller: this.scroller,
         controller: this.controller,
         itemLayout: () => {
-          this.itemLayout(this)
+          this.itemLayout()
         },
         onRefresh: () => {
           //下拉刷新

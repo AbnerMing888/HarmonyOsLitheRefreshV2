@@ -1,4 +1,4 @@
-import { LitheRefresh, RefreshController } from '@abner/lithe_refresh'
+import { RefreshController, LitheRefresh } from '@abner/lithe_refresh_v2'
 import { ActionBar } from '@abner/bar'
 import router from '@ohos.router'
 
@@ -15,9 +15,9 @@ struct GridUpAndDownPage {
   controller: RefreshController = new RefreshController()
 
   @Builder
-  itemLayout(_this: GridUpAndDownPage) {
-    Grid(_this.scroller) {
-      ForEach(_this.testArray, (item: number) => {
+  itemLayout() {
+    Grid(this.scroller) {
+      ForEach(this.testArray, (item: number) => {
         GridItem() {
           Text('' + item)
             .width('100%')
@@ -58,7 +58,7 @@ struct GridUpAndDownPage {
         scroller: this.scroller,
         controller: this.controller,
         itemLayout: () => {
-          this.itemLayout(this)
+          this.itemLayout()
         },
         onRefresh: () => {
           //下拉刷新
