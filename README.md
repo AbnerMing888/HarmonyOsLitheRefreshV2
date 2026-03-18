@@ -33,13 +33,10 @@ lithe_refresh_v2一款V2装饰器刷新组件,并且是一个轻盈的上拉下�
 <img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/refresh/lithe_103.png" width="200px" />
 </p>
 
-## 开发环境
-
-DevEco Studio NEXT Developer Beta1,Build Version:  6.0.0.868
+## Api使用版本
 
 Api版本：**>=12**
 
-modelVersion：5.0.0
 
 ## 快速使用
 
@@ -54,7 +51,7 @@ ohpm install @abner/lithe_refresh_v2
 方式二：在工程的oh-package.json5中设置三方包依赖，配置示例如下：
 
 ```
-"dependencies": { "@abner/lithe_refresh_v2": "^1.0.2"}
+"dependencies": { "@abner/lithe_refresh_v2": "^1.0.3"}
 ```
 
 <p align="center"><img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/refresh/lithe_001.png" width="300"></p>
